@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EasyKotlin</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="entry_fragment_label">Entry Fragment</string>
+    <string name="host_fragment_label">Host Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>
