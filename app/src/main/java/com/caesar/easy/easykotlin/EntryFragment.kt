@@ -32,7 +32,7 @@ class EntryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        findNavController().navigate(R.id.action_EntryFragment_to_HostFragment)
+        findNavController().navigate(R.id.action_EntryFragment_to_HostFragment)
 
     }
 
