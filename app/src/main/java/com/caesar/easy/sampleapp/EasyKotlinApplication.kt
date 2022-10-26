@@ -8,7 +8,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
-class EasyKotlinApplication : Application(),HasActivityInjector {
+class EasyKotlinApplication : Application(), HasActivityInjector {
 
     @Inject
     internal lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>

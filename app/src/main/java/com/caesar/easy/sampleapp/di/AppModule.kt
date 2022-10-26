@@ -11,7 +11,7 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    fun provideContext():Context = EasyKotlinApplication.app()
+    fun provideContext(): Context = EasyKotlinApplication.app()
 
     @Singleton
     @Provides

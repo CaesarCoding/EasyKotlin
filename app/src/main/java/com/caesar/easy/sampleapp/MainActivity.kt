@@ -26,10 +26,10 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
 
-        if (easyKotlin.appGuardian.isAppTampered(PACKAGE_NAME)){
+        if (easyKotlin.appGuardian.isAppTampered(PACKAGE_NAME)) {
             finish()
         }
-        if (easyKotlin.appGuardian.isEmulator()){
+        if (easyKotlin.appGuardian.isEmulator()) {
             finish()
         }
 
