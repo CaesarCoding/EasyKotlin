@@ -2,7 +2,6 @@ package com.caesar.easy.sampleapp
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -12,9 +11,10 @@ import android.view.MenuItem
 import com.caesar.easy.sampleapp.databinding.ActivityMainBinding
 import com.caesar.easy.easyKotlin.external.EasyKotlin
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         if (easyKotlin.appGuardian.isEmulator()){
             finish()
         }
-
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

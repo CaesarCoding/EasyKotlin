@@ -3,10 +3,11 @@ package com.caesar.easy.sampleapp.di
 import com.caesar.easy.sampleapp.EasyKotlinApplication
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, AppBindingModule::class])
+@Component(modules = [AndroidSupportInjectionModule::class,AppModule::class, AppBindingModule::class])
 interface AppComponent{
 
     @Component.Builder
