@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.caesar.easy.easykotlin.EntryFragment"
+        android:name="com.caesar.easy.sampleapp.journey.entry.EntryFragment"
         android:label="@string/entry_fragment_label"
         tools:layout="@layout/fragment_entry">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.caesar.easy.easykotlin.HostFragment"
+        android:name="com.caesar.easy.sampleapp.journey.host.HostFragment"
         android:label="@string/host_fragment_label"
         tools:layout="@layout/fragment_host">
 

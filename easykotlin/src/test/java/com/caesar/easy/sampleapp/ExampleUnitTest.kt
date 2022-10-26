@@ -1,4 +1,4 @@
-package com.caesar.easy.easykotlin
+package com.caesar.easy.sampleapp
 
 import org.junit.Test
 

@@ -1,23 +1,37 @@
-package com.caesar.easy.easykotlin
+package com.caesar.easy.sampleapp
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.caesar.easy.easykotlin.databinding.ActivityMainBinding
+import com.caesar.easy.sampleapp.databinding.ActivityMainBinding
+import com.caesar.easy.easyKotlin.external.EasyKotlin
+import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    @Inject
+    lateinit var easyKotlin: EasyKotlin
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
+
+        if (easyKotlin.appGuardian.isAppTampered(PACKAGE_NAME)) {
+            finish()
+        }
+        if (easyKotlin.appGuardian.isEmulator()) {
+            finish()
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -54,5 +68,9 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    companion object {
+        private const val PACKAGE_NAME = "com.caesar.easy.easyKotlin"
     }
 }
