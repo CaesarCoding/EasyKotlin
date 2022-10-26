@@ -1,12 +1,11 @@
-package com.caesar.easy.easykotlin
+package com.caesar.easy.sampleapp.journey.host
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.caesar.easy.easykotlin.databinding.FragmentHostBinding
+import com.caesar.easy.sampleapp.databinding.FragmentHostBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -31,7 +30,7 @@ class HostFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        findNavController().navigate(R.id.action_Hostragment_to_EntryFragment)
+
     }
 
     override fun onDestroyView() {
